@@ -1,0 +1,17 @@
+import pandas as pd
+from sqlalchemy import create_engine
+
+engine = create_engine(
+    "postgresql://postgres:password@localhost:5432/healthcare"
+)
+
+df = pd.read_parquet("../data/processed/hospital_clean")
+
+df.to_sql(
+    "hospital_data",
+    engine,
+    if_exists="replace",
+    index=False
+)
+
+print("Loaded into warehouse")

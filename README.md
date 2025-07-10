@@ -88,7 +88,7 @@ healthcare-data-lakehouse
 ### Clone Repository
 
 
-git clone https://github.com/yourusername/healthcare-data-lakehouse.git
+git clone https://github.com/pvsk13/healthcare-data-lakehouse.git
 
 cd healthcare-data-lakehouse
 

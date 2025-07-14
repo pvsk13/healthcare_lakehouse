@@ -1,0 +1,18 @@
+name: Healthcare Pipeline
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run ingestion
+        run: python ingestion/fetch_healthcare_data.py
